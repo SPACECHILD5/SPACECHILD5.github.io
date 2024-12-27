@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>러닝 속도변환기</title>
+    <script src="paceconverter.js"></script>
+  </head>
+  <body>
+    <h1>러닝 속도표기 변환기</h1>
+    <p>
+      스마트워치와 트레드밀에서 다르게 표시되는 러닝 페이스를 변환해 주는
+      프로그램입니다.
+    </p>
+    <label for="speed">트레드밀 속도(km/h):</label>
+    <input type="number" id="speed" placeholder="예 : 10" />
+    <button onclick="treadmillToPace()">변환</button>
+    <p id="result"></p>
+  </body>
+</html>
