@@ -28,7 +28,7 @@ function paceToTreadmill() {
 
   let totalTimeInSeconds = minutes * 60 + seconds;
   let distanceInKilometer = 3600 / totalTimeInSeconds;
-  let speedKmh = distanceInKilometer.toFixed(2);
+  let speedKmh = distanceInKilometer.toFixed(1);
 
   document.getElementById(
     "result2"
