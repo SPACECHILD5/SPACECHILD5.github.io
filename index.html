@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>러닝 속도변환기</title>
-    <script src="paceconverter.js"></script>
+    <!-- <script src="paceconverter.js"></script> -->
+    <script></script>
   </head>
   <body>
     <h1>러닝 속도표기 변환기</h1>
@@ -13,9 +14,25 @@
       스마트워치와 트레드밀에서 다르게 표시되는 러닝 페이스를 변환해 주는
       프로그램입니다.
     </p>
+    <br />
+    <br />
+    <h2>트레드밀 속도 >> 페이스 변환</h2>
     <label for="speed">트레드밀 속도(km/h):</label>
-    <input type="number" id="speed" placeholder="예 : 10" />
+    <input type="number" id="speed" placeholder="예 : 10" required />
     <button onclick="treadmillToPace()">변환</button>
-    <p id="result"></p>
+    <p id="result1"></p>
+    <p>
+      <br />
+      <br />
+    </p>
+
+    <h2>페이스 >> 트레드밀 속도 변환</h2>
+    <label for="pace">러닝 페이스(분초/km):</label>
+    <input type="number" id="minutes" placeholder="분 입력" required />
+    <input type="number" id="seconds" placeholder="초 입력" required />
+    <!-- 초를 입력하지 않아도 입력된 분으로만 계산할 수 있는 예외를 구현하지
+    못했음-->
+    <button onclick="paceToTreadmill()">변환</button>
+    <p id="result2"></p>
   </body>
 </html>
