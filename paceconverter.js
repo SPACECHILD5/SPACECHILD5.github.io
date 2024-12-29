@@ -26,13 +26,27 @@ function treadmillToPace() {
 function paceToTreadmill() {
   const minutes = parseFloat(document.getElementById("minutes").value);
   const seconds = parseFloat(document.getElementById("seconds").value);
-  if (isNaN(minutes) || isNaN(seconds) || minutes < 0 || seconds < 0) {
+
+  // 유효성 검사
+  if (isNaN(minutes) || isNaN(seconds) || minutes <= 0 || seconds <= 0) {
     showMessage("result2", "올바른 페이스를 입력하세요.");
     return;
   }
+  if (minutes < 0 || minutes > 60) {
+    showMessage("result2", "분은 0에서 60 사이여야 합니다.");
+    return;
+  }
+  if (seconds < 0 || seconds >= 60) {
+    showMessage("result2", "초는 0에서 59 사이여야 합니다.");
+    return;
+  }
+  // if (isNaN(minutes) || isNaN(seconds) || minutes < 0 || seconds < 0) {
+  //   showMessage("result2", "올바른 페이스를 입력하세요.");
+  //   return;
+  // }
 
-  const totalTimeInSeconds = minutes * 60 + seconds;
-  const speedKmh = (3600 / totalTimeInSeconds).toFixed(1);
+  const totalSeconds = minutes * 60 + seconds;
+  const speedKmh = (3600 / totalSeconds).toFixed(1);
 
   showMessage(
     "result2",

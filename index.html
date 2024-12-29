@@ -17,7 +17,7 @@
       </p>
 
       <section>
-        <h2>트레드밀 속도 >> 페이스 변환</h2>
+        <h2>트레드밀 속도를 페이스로 변환하기</h2>
         <label for="speed">트레드밀 속도(km/h):</label>
         <input type="number" id="speed" placeholder="예 : 10" required />
         <button onclick="treadmillToPace()">변환</button>
@@ -25,10 +25,24 @@
       </section>
 
       <section>
-        <h2>페이스 >> 트레드밀 속도 변환</h2>
+        <h2>페이스를 트레드밀 속도로 변환하기</h2>
         <label for="pace">러닝 페이스(분초/km):</label>
-        <input type="number" id="minutes" placeholder="분 입력" required />
-        <input type="number" id="seconds" placeholder="초 입력" required />
+        <input
+          type="number"
+          id="minutes"
+          placeholder="분 입력"
+          min="0"
+          max="60"
+          required
+        />
+        <input
+          type="number"
+          id="seconds"
+          placeholder="초 입력"
+          min="0"
+          max="60"
+          required
+        />
         <!-- 초를 입력하지 않아도 입력된 분으로만 계산할 수 있는 예외를 구현하지
         못했음-->
         <button onclick="paceToTreadmill()">변환</button>
