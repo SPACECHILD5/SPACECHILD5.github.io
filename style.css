@@ -1,0 +1,20 @@
+@import "reset.css";
+
+
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;하단으로 밀기 */
+}
+footer a {
+  color: #4caf50;
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}

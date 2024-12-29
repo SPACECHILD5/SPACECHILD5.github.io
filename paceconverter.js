@@ -24,10 +24,11 @@ function paceToTreadmill() {
   const seconds = parseFloat(document.getElementById("seconds").value);
 
   // 초 입력값이 비어 있으면 기본값 0 설정
+  const validMinutes = isNaN(minutes) ? 0 : minutes;
   const validSeconds = isNaN(seconds) ? 0 : seconds;
 
   // 유효성 검사
-  if (minutes < 0 || minutes >= 60) {
+  if (validMinutes < 0 || validMinutes >= 60) {
     showMessage("result2", "분은 0에서 59 사이여야 합니다.");
     return;
   }
@@ -36,16 +37,17 @@ function paceToTreadmill() {
     return;
   }
 
-  const totalSeconds = minutes * 60 + validSeconds;
+  const totalSeconds = validMinutes * 60 + validSeconds;
   if (totalSeconds === 0) {
     showMessage("result2", "분 또는 초를 0보다 큰 값으로 입력하세요.");
+    return;
   }
 
   const speedKmh = (3600 / totalSeconds).toFixed(1);
 
   showMessage(
     "result2",
-    `페이스 ${minutes}분 ${validSeconds}초는 트레드밀 속도 ${speedKmh}km/h 입니다.`
+    `페이스 ${validMinutes}분 ${validSeconds}초는 트레드밀 속도 ${speedKmh}km/h 입니다.`
   );
 }
 
